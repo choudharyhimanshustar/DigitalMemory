@@ -8,7 +8,7 @@ const app = express();
 const Home=require('./Home')
 connect();
 app.use(cors({
-    origin: 'http://localhost:3000',  // Only allow requests from this origin
+    origin: 'https://digital-memory-one.vercel.app/',  // Only allow requests from this origin
 }));
 app.use(express.json());
 app.use('/',Home);
