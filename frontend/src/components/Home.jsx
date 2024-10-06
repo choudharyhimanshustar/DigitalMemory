@@ -16,7 +16,8 @@ export default function Home() {
             navigate('/login');
         }
         try {
-            const response = await axios.get('https://digitallibraryofpersonalmemories.onrender.com', {
+            const response = await 
+            axios.get('https://digitalmemory.onrender.com', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

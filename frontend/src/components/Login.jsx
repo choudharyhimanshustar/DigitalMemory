@@ -10,7 +10,7 @@ export default function Login() {
         try
         {
             const response=await 
-            axios.post('https://digitallibraryofpersonalmemories.onrender.com',{
+            axios.post('https://digitalmemory.onrender.com/login',{
                 email:email,
                 password:password
             })

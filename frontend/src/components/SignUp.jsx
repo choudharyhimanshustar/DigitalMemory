@@ -9,7 +9,8 @@ export default function SignUp() {
     const [fullName, setFullName] = useState("");
     const handleSignUP = async () => {
         try {
-            const response=await axios.post('https://digitallibraryofpersonalmemories.onrender.com', {
+            const response=await 
+            axios.post('https://digitalmemory.onrender.com/signUp', {
                 email: email,
                 fullName: fullName,
                 password: password
