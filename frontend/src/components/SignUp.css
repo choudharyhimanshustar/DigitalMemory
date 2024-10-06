@@ -1,0 +1,20 @@
+.SignUpbtn {
+    width: fit-content;
+    padding: 1%;
+
+    border: none;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 42%
+}
+.SignUpbtn button
+{
+    border: none;
+    background-color: aquamarine;
+    margin: 5%;
+    padding: 15%;
+    border-radius: 2.5rem;
+    cursor: pointer;
+}
