@@ -7,11 +7,13 @@ const Login = require('./Login');
 const app = express();
 const Home = require('./Home')
 connect();
+
 app.use(cors({
     origin: 'https://digital-memory-one.vercel.app',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
 }));
+app.options('*', cors());
 app.use(express.json());
 app.use('/', Home);
 app.use('/signUp', signUp);
