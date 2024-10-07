@@ -3,25 +3,27 @@ import axios from 'axios'
 import './Home.css'
 export default function Home() {
     const navigate = useNavigate();
-    function isExpired(token)
-    {
-        const payload=JSON.parse(atob(token.split('.')[1]));
-        return (payload.exp*1000)<Date.now();
+    function isExpired(token) {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        return (payload.exp * 1000) < Date.now();
     }
     const fetchHomePage = async (req, res) => {
         const token = await localStorage.getItem('token');
         console.log(token);
-        if(token===null || isExpired(token))
-        {
+        if (token === null || isExpired(token)) {
             navigate('/login');
         }
         try {
-            const response = await 
-            axios.get('https://digitalmemory.onrender.com', {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
+            const response = await
+                axios.get('https://digitalmemory.onrender.com', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+
+                    },
+
+                    withCredentials: true,  // Ensures cookies/auth headers are sent with the request
+
+                });
             console.log(response.data.message);
         } catch (error) {
             if (error) {
@@ -32,15 +34,14 @@ export default function Home() {
 
 
     }
-    
+
     fetchHomePage();
-    function handleClick()
-    {
+    function handleClick() {
         localStorage.removeItem('token');
         navigate('/login');
     }
     return (<div>
-        <button onClick={()=>handleClick()}
+        <button onClick={() => handleClick()}
             className='LogOutCss'>Log Out</button>
     </div>);
 }
