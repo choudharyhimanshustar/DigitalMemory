@@ -3,6 +3,7 @@ import axios from 'axios'
 import './Home.css'
 export default function Home() {
     const navigate = useNavigate();
+    const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:2000';
     function isExpired(token) {
         const payload = JSON.parse(atob(token.split('.')[1]));
         return (payload.exp * 1000) < Date.now();
@@ -15,7 +16,7 @@ export default function Home() {
         }
         try {
             const response = await
-                axios.get('https://digitalmemory.onrender.com', {
+                axios.get(`${backendURL}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
 

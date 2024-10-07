@@ -7,10 +7,11 @@ export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [fullName, setFullName] = useState("");
+    const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:2000';
     const handleSignUP = async () => {
         try {
             const response=await 
-            axios.post('https://digitalmemory.onrender.com/signUp', {
+            axios.post(`${backendURL}/signUp`, {
                 email: email,
                 fullName: fullName,
                 password: password
