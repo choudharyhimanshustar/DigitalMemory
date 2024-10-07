@@ -6,12 +6,12 @@ export default function Login() {
     const navigate = useNavigate();
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:2000';
+    
     const handleClick=async()=> {
         try
         {
             const response=await 
-            axios.post(`${backendURL}/login`,{
+            axios.post('https://digitalmemory.onrender.com/login',{
                 email:email,
                 password:password
             })
