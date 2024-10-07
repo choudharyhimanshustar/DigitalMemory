@@ -9,7 +9,7 @@ const Home = require('./Home')
 connect();
 
 app.use(cors({
-    origin: 'https://digital-memory-one.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
 }));
