@@ -25,5 +25,5 @@ app.use(express.json());
 app.use('/', Home);
 app.use('/signUp', signUp);
 app.use('/login', Login);
-const PORT =2000;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => { console.log(`Server connected on ${PORT}`) });
