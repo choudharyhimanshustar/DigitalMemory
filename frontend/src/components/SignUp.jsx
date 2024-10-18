@@ -11,7 +11,7 @@ export default function SignUp() {
     const handleSignUP = async () => {
         try {
             const response=await 
-            axios.post('https://digitalmemory.onrender.com/signUp', {
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}/signUp`, {
                 email: email,
                 fullName: fullName,
                 password: password
@@ -23,6 +23,7 @@ export default function SignUp() {
             }
             else
             {
+                console.log(data.user._id);
                 console.log("User Registered Successfully");
                 navigate('/login');
             }
@@ -36,7 +37,7 @@ export default function SignUp() {
                 <label>Email</label>
                 <input
                     type="email"
-                    required="true"
+                    required={true}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter Email" />

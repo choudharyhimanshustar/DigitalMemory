@@ -1,0 +1,60 @@
+.MemoryCSS {
+    display: flex;
+    flex-direction: column;
+    background-color: #789DBC;
+    width: 50%;
+    padding: 1%;
+    border: none;
+    border-radius: 1.5rem;
+    position: relative;
+    left: 25%;
+}
+
+.MemoryCSS input {
+    outline: none;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1%;
+    margin: 1%
+}
+
+.MemoryCSS select {
+    outline: none;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1%;
+    margin: 1%
+}
+
+.MemorySubmitBTN {
+    border: none;
+    background-color: #A2D2DF;
+    margin: 5%;
+    padding: 1%;
+    border-radius: 2.5rem;
+    cursor: pointer;
+}
+
+
+textarea {
+    outline: none;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 2%;
+    margin: 1%;
+}
+
+@media (max-width: 768px) {
+    .MemoryCSS {
+        width: 75%;
+        height: 40vh;
+        position: relative;
+        left: 10%;
+        margin-top: 20%;
+        padding: 5%;
+    }
+    select
+    {
+        width:50%
+    }
+}

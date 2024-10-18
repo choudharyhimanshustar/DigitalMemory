@@ -12,9 +12,21 @@
 .SignUpbtn button
 {
     border: none;
-    background-color: aquamarine;
+    background-color: #A2D2DF;
     margin: 5%;
     padding: 15%;
     border-radius: 2.5rem;
     cursor: pointer;
+}
+@media (max-width:768px)
+{
+    .Login
+    {
+        height: fit-content;
+        padding: 5%;
+        position: relative;
+        top:25vh;
+        width:80%;
+        left:5%
+    }
 }

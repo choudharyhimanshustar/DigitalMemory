@@ -1,0 +1,109 @@
+.audio {
+    width: 100%
+}
+
+.Banner {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+}
+
+.bannerimg {
+    width: 20%;
+    border-radius: 1.5rem;
+}
+
+.BannerImgDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.btnCSS {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1%;
+}
+
+.deleteBtn {
+    border: none;
+    border-radius: 0.25rem;
+    padding: 2%;
+    background-color: #A2D2DF;
+    cursor: pointer;
+    color: rgb(54, 121, 160);
+}
+
+.enlarged {
+    width: 25%;
+    position: absolute;
+    top: 1%;
+    left: 40%;
+    border-radius: 1.5rem;
+}
+
+.img {
+    width: 100%
+}
+
+.Memory {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.MemoryCard {
+    border-radius: 1.5rem;
+    background-color: #789DBC;
+    width: 20%;
+    height: fit-content;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.MemoryCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    width: 40%;
+}
+
+.video {
+    width: 100%
+}
+
+@media (max-width: 768px) {
+    .Banner {
+        width: 99%;
+        height: fit-content;
+    }
+
+    .BannerImgDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 1%;
+    }
+    .bannerimg
+    {
+        width:40%;
+        margin: 2%;
+    }
+    .MemoryCard {
+        border-radius: 1.5rem;
+        background-color: #789DBC;
+        width:100%;
+        height: fit-content;
+        text-align: center;
+        padding: 2%;
+        margin-right: 10%;
+        cursor: pointer;
+    }
+}

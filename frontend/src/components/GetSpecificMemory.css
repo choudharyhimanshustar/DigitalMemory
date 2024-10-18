@@ -1,0 +1,29 @@
+.filter
+{
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.filter select
+{
+    border-radius: 1.5rem;
+    padding: 0.25%;
+}
+.NoMemory
+{
+    position: relative;
+    left:40%;
+    width:20%;
+    border-radius: 1.5rem;
+}
+@media (max-width: 768px) {
+    .NoMemory
+    {
+        width:90%;
+        position: relative;
+        left:5%
+    }
+    select
+    {
+        width:30%
+    }
+}

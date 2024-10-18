@@ -11,7 +11,7 @@ export default function Login() {
         try
         {
             const response=await 
-            axios.post('https://digitalmemory.onrender.com/login',{
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}`,{
                 email:email,
                 password:password
             })
@@ -24,6 +24,7 @@ export default function Login() {
             else
             {
                 localStorage.setItem('token',data.token);
+                localStorage.setItem('id',data.id);
                 console.log("User Login Successfully")
                 navigate('/');
             }

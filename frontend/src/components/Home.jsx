@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './Home.css'
+import Memories from './Memory';
+
+import Navbar from './Navbar';
+
 export default function Home() {
     const navigate = useNavigate();
-    
+
     function isExpired(token) {
         const payload = JSON.parse(atob(token.split('.')[1]));
         return (payload.exp * 1000) < Date.now();
@@ -16,7 +20,7 @@ export default function Home() {
         }
         try {
             const response = await
-                axios.get('https://digitalmemory.onrender.com', {
+                axios.get(`${process.env.REACT_APP_BACKEND_URL}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
 
@@ -25,7 +29,7 @@ export default function Home() {
                     withCredentials: true,  // Ensures cookies/auth headers are sent with the request
 
                 });
-            console.log(response.data.message);
+           
         } catch (error) {
             if (error) {
                 console.log(error);
@@ -37,12 +41,12 @@ export default function Home() {
     }
 
     fetchHomePage();
-    function handleClick() {
-        localStorage.removeItem('token');
-        navigate('/login');
-    }
-    return (<div>
-        <button onClick={() => handleClick()}
-            className='LogOutCss'>Log Out</button>
+
+    return (<div className='HomeMainDiv'>
+
+        <Navbar />
+        
+
+
     </div>);
 }
