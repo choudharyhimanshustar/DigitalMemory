@@ -44,4 +44,4 @@ app.use('/getSpecificMemories',GetSpecificMemory);
 app.use('/getEmotionalMemories',GetEmotionalMemories);
 app.use('/getFavMemories',GetfavMemories);
 const PORT = 2000;
-app.listen(PORT,  '44.226.145.213',() => { console.log(`Server connected on ${PORT}`) });
+app.listen(PORT,() => { console.log(`Server connected on ${PORT}`) });
