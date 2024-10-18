@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         }
         const newUser = new User({email,fullName,password});
         await newUser.save();
-        return res.json({ message: "User succesfully registered" });
+        return res.json({ message: "User succesfully registered" ,user:newUser});
     }
     catch {
         return res.json({ error: "User failed to register" })

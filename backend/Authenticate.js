@@ -14,6 +14,7 @@ const authenticate=(req,res,next)=>{
                     else
                     {
                         res.user=user;
+                        
                         next();
                     }
                 })

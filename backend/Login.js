@@ -15,7 +15,8 @@ router.post('/',async(req,res)=>{
         if(!isMatch)
             return res.json({error:"Invalid Password"});
         const token=jwt.sign({id:user._id},process.env.Secret_Key);
-        return res.json({token});
+        const id=user._id;
+        return res.json({token,id});
     }
     catch(err)
     {
