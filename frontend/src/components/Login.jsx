@@ -6,7 +6,7 @@ export default function Login() {
     const navigate = useNavigate();
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    
+    console.log(process.env.REACT_APP_BACKEND_URL);
     const handleClick=async()=> {
         try
         {
