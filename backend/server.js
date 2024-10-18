@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-
+app.options('*', cors());
 app.use('/', Home);
 app.use('/signUp', signUp);
 app.use('/login', Login);
@@ -38,5 +38,5 @@ app.use('/update', UpdateMemory);
 app.use('/getSpecificMemories', GetSpecificMemory);
 app.use('/getEmotionalMemories', GetEmotionalMemories);
 app.use('/getFavMemories', GetfavMemories);
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => { console.log(`Server connected on ${PORT}`) });
