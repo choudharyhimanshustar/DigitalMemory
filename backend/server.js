@@ -20,19 +20,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({
   useTempFiles: true
 }));
-app.use(cors({
-  origin: 'https://digital-memory-one.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  credentials: true,
-}));
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://digital-memory-one.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,PATCH');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-app.options('*', cors());
+
 app.use('/', Home);
 app.use('/signUp', signUp);
 app.use('/login', Login);
