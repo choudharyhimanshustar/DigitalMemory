@@ -32,7 +32,7 @@ app.options('*', cors(corsOptions));
 app.use('/', Home);
 app.use('/signUp', signUp);
 app.use('/login', Login);
-app.use('/Memories', Memories);
+app.use('/memories', Memories);
 app.use('/getMemories', GetMemories);
 app.use('/delete', deleteMemory);
 app.use('/update', UpdateMemory);
