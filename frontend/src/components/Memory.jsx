@@ -12,7 +12,6 @@ export default function Memories() {
     multimedia: null,
     category: "Family",
     emotions: "happy",
-    location: ""
   })
   function handleChange(e) {
     e.preventDefault();
@@ -33,7 +32,6 @@ export default function Memories() {
     formData.append('description', memoryData.description);
     formData.append('category', memoryData.category);
     formData.append('emotions', memoryData.emotions);
-    formData.append('location', memoryData.location);
     if (memoryData.multimedia) {
       formData.append('multimedia', memoryData.multimedia);
     }
@@ -87,16 +85,6 @@ export default function Memories() {
           <option value="proud">Proud</option>
         </select>
 
-        {memoryData.category === 'Travel' && (
-          <>
-            <b>Location</b>
-            <input
-              type='text'
-              name="location"
-              value={memoryData.location}
-              onChange={(e) => handleChange(e)} /></>
-
-        )}
         <button type='submit'
           className='MemorySubmitBTN'><b>Submit</b></button>
       </form>
