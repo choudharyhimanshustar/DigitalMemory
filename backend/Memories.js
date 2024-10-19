@@ -5,7 +5,7 @@ const {uploadMedia}=require('./Services/Cloudinary')
 
 router.post('/',async (req, res) => {
     try {
-        const {userId,title,category,emotions,location } = req.body;
+        const {userId,title,category,emotions } = req.body;
         console.log(userId);
         
         const multimedia=req.files?req.files.multimedia:null;
@@ -23,7 +23,6 @@ router.post('/',async (req, res) => {
             multimedia:multimediaUrl,
             category,
             emotions,
-            location
         })
         await newUser.save();
        
