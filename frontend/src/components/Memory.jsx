@@ -37,7 +37,7 @@ export default function Memories() {
     }
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}`,
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Memories`,
         formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
