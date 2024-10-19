@@ -21,17 +21,14 @@ app.use(fileUpload({
   useTempFiles: true
 }));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://digital-memory-one.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
-app.options('*', cors({
-  origin: "https://digital-memory-one.vercel.app",
-  credentials: true
-}));
+const corsOptions = {
+  origin: 'https://digital-memory-one.vercel.app',
+  credentials: true,
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization'
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use('/', Home);
 app.use('/signUp', signUp);
 app.use('/login', Login);
@@ -43,4 +40,7 @@ app.use('/getSpecificMemories', GetSpecificMemory);
 app.use('/getEmotionalMemories', GetEmotionalMemories);
 app.use('/getFavMemories', GetfavMemories);
 const PORT = process.env.PORT || 2000;
-app.listen(PORT, () => { console.log(`Server connected on ${PORT}`) });
+const HOST = '0.0.0.0'; // or specify a different host if necessary
+app.listen(PORT, HOST, () => {
+  console.log(`Server connected on ${HOST}:${PORT}`);
+});
